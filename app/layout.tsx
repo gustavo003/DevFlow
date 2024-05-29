@@ -7,7 +7,7 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
-
+import { ThemeProvider } from "@/context/ThemeProvider";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
 import "./globals.css";
@@ -65,8 +65,10 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.variable}  ${spaceGrotesk.variable}`}>
-          <Header />
-          {children}
+          <ThemeProvider>
+            <Header />
+            {children}
+          </ThemeProvider>
         </body>
       </ClerkProvider>
     </html>
