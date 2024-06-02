@@ -2,10 +2,10 @@
 /* eslint-disable camelcase */
 import {
   ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
+  // SignedIn,
+  // SignedOut,
+  // SignInButton,
+  // UserButton,
 } from "@clerk/nextjs";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { Inter, Space_Grotesk } from "next/font/google";
@@ -32,23 +32,23 @@ export const metadata: Metadata = {
     icon: "/assets/images/site-logo.svg",
   },
 };
-function Header() {
-  return (
-    <header
-      style={{ display: "flex", justifyContent: "space-between", padding: 20 }}
-    >
-      <h1>My App</h1>
-      <SignedIn>
-        {/* Mount the UserButton component */}
-        <UserButton />
-      </SignedIn>
-      <SignedOut>
-        {/* Signed out users get sign in button */}
-        <SignInButton />
-      </SignedOut>
-    </header>
-  );
-}
+// function Header() {
+//   return (
+//     <header
+//       style={{ display: "flex", justifyContent: "space-between", padding: 20 }}
+//     >
+//       <h1>My App</h1>
+//       <SignedIn>
+//         {/* Mount the UserButton component */}
+//         <UserButton />
+//       </SignedIn>
+//       <SignedOut>
+//         {/* Signed out users get sign in button */}
+//         <SignInButton />
+//       </SignedOut>
+//     </header>
+//   );
+// }
 export default function RootLayout({
   children,
 }: {
@@ -65,10 +65,7 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.variable}  ${spaceGrotesk.variable}`}>
-          <ThemeProvider>
-            <Header />
-            {children}
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </body>
       </ClerkProvider>
     </html>
