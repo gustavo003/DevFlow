@@ -5,6 +5,14 @@ export const themes = [
   { value: "dark", label: "Dark", icon: "/assets/icons/moon.svg" },
   { value: "system", label: "System", icon: "/assets/icons/computer.svg" },
 ];
+export const questionsExample = [
+  "Question 1 ?????",
+  "Question 2 ?????",
+  "Question 3 ?????",
+  "Question 4 ?????",
+  "Question 5 ?????",
+];
+export const tagsExample = ["tag 1", "tag 2", "tag 3", "tag 4"];
 export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
