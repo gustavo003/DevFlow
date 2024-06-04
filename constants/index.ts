@@ -12,6 +12,43 @@ export const questionsExample = [
   { id: 1, name: "Question 4" },
   { id: 1, name: "Question 5" },
 ];
+export const questions = [
+  {
+    _id: "1",
+    title: "Qual o preço do medo abundante de todas as verdades?",
+    tags: [
+      { _id: "1", name: "python" },
+      { _id: "2", name: "sql" },
+    ],
+    author: {
+      _id: "1",
+      name: "John Doe",
+      picture: "", // Add a default or specific picture URL here
+    },
+    upvotes: 10,
+    views: 100,
+    answers: [], // Initialize as an empty array or add specific objects as needed
+    createdAt: new Date("2021-09-11"),
+  },
+  {
+    _id: "2",
+    title: "O que é a vida?",
+    tags: [
+      { _id: "1", name: "css" },
+      { _id: "2", name: "sql" },
+    ],
+    author: {
+      _id: "2",
+      name: "John Doe",
+      picture: "", // Add a default or specific picture URL here
+    },
+    upvotes: 10,
+    views: 100,
+    answers: [], // Initialize as an empty array or add specific objects as needed
+    createdAt: new Date("2021-09-11"),
+  },
+];
+
 export const tagsExample = [
   { id: 1, name: "Tag 1", totalQuestions: 0 },
   { id: 1, name: "Tag 2", totalQuestions: 2 },
