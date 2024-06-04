@@ -1,3 +1,4 @@
+import HomeFilters from "@/components/home/HomeFilters";
 import Filters from "@/components/shared/Filters";
 import SearchQuestion from "@/components/shared/search/SearchQuestion";
 import { Button } from "@/components/ui/button";
@@ -27,9 +28,10 @@ const page = () => {
         <Filters
           filters={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
-          containerClasses="hidden max-md:flex "
+          containerClasses="hidden max-lg:flex "
         />
       </div>
+      <HomeFilters />
     </>
   );
 };
