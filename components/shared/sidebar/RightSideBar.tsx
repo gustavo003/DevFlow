@@ -41,14 +41,14 @@ const RightSideBar = () => {
      p-6 pt-36 shadow-light-300 dark:shadow-none max-lg:items-start max-sm:hidden lg:w-[350px]"
     >
       <div>
-        <h3 className="h3-bold pb-6">Top Questions</h3>
+        <h3 className="h3-bold text-dark200_light900 pb-6">Top Questions</h3>
         <div className="text-dark200_light900 mt-7 flex w-full flex-col gap-[30px]">
           {questionsExample.map((question, index) => (
             <QuestionComponent key={question.id} question={question} />
           ))}
         </div>
       </div>
-      <div className="mt-7 flex flex-col gap-4">
+      <div className="text-dark200_light900 mt-7 flex flex-col gap-4">
         <h3 className="h3-bold mt-8 pb-6">Popular Tags</h3>
         {tagsExample.map((tag, index) => (
           <TagComponent key={index} tag={tag} />
