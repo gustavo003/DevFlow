@@ -4,7 +4,15 @@ export interface SidebarLink {
   route: string;
   label: string;
 }
-
+export interface Question {
+  id: number;
+  name: string;
+}
+export interface Tag {
+  id: number;
+  name: string;
+  totalQuestions: number;
+}
 export interface Job {
   id?: string;
   12;

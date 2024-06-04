@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import Theme from "./Theme";
 import GlobalSearch from "../search/GlobalSearch";
 const NavBar = () => {
@@ -37,9 +37,7 @@ const NavBar = () => {
             }}
           />
         </SignedIn>
-        <SignedOut>
-          <SignInButton>Log In</SignInButton>
-        </SignedOut>
+
         <MobileNav />
       </div>
     </nav>

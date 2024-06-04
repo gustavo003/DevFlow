@@ -6,13 +6,19 @@ export const themes = [
   { value: "system", label: "System", icon: "/assets/icons/computer.svg" },
 ];
 export const questionsExample = [
-  "Question 1 ?????",
-  "Question 2 ?????",
-  "Question 3 ?????",
-  "Question 4 ?????",
-  "Question 5 ?????",
+  { id: 1, name: "Question 1" },
+  { id: 1, name: "Question 2" },
+  { id: 1, name: "Question 3" },
+  { id: 1, name: "Question 4" },
+  { id: 1, name: "Question 5" },
 ];
-export const tagsExample = ["tag 1", "tag 2", "tag 3", "tag 4"];
+export const tagsExample = [
+  { id: 1, name: "Tag 1", totalQuestions: 0 },
+  { id: 1, name: "Tag 2", totalQuestions: 2 },
+  { id: 1, name: "Tag 3", totalQuestions: 5 },
+  { id: 1, name: "Tag 4", totalQuestions: 10 },
+  { id: 1, name: "Tag 5", totalQuestions: 12 },
+];
 export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
