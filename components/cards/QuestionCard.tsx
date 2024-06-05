@@ -49,7 +49,7 @@ const QuestionCard = ({
             >
               {title}
             </h3>
-            <span className="mt-2 subtle-regular text-dark400_light700 line-clamp-1 flex max-sm:hidden">
+            <span className="subtle-regular text-dark400_light700 mt-2 line-clamp-1 flex max-sm:hidden">
               {getTimestamp(createdAt)}
             </span>
           </Link>

@@ -20,6 +20,7 @@ import { useForm } from "react-hook-form";
 import { QuestionSchema } from "@/lib/validation";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
+import { createQuestion } from "@/lib/actions/question.action";
 export default function Question() {
   const apiKey = process.env.NEXT_PUBLIC_TINYMCE_API_KEY;
   const editorRef = useRef(null);
@@ -66,9 +67,10 @@ export default function Question() {
     },
   });
 
-  function submit(values: z.infer<typeof QuestionSchema>) {
+  async function submit(values: z.infer<typeof QuestionSchema>) {
     setIsSubmitting(true);
     try {
+      await createQuestion({});
     } catch (err) {
     } finally {
       setIsSubmitting(false);
@@ -123,6 +125,9 @@ export default function Question() {
                     // @ts-ignore
                     onInit={(_evt, editor) => (editorRef.current = editor)}
                     initialValue=""
+                    onEditorChange={(content) => {
+                      field.onChange(content);
+                    }}
                     init={{
                       height: 350,
                       menubar: false,
