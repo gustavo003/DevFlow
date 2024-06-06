@@ -26,7 +26,6 @@ const SearchQuestion = ({ props }: { props: Props }) => {
       <Input
         type="text"
         placeholder={props.placeholder}
-        value=""
         className="paragraph-regular no-focus placeholder background-light800_darkgradient border-none shadow-none outline-none"
       />
       {props.iconPosition === "right" && (

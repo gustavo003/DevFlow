@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import { usePathname, useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -21,11 +22,14 @@ import { QuestionSchema } from "@/lib/validation";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion } from "@/lib/actions/question.action";
-export default function Question() {
+export default function Question({ mongoUserId }: { mongoUserId: string }) {
   const apiKey = process.env.NEXT_PUBLIC_TINYMCE_API_KEY;
   const editorRef = useRef(null);
   const type: string = "create";
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
   function handleRemoveTag(tag: string, field: any) {
     form.setValue(
       "tags",
@@ -70,7 +74,12 @@ export default function Question() {
   async function submit(values: z.infer<typeof QuestionSchema>) {
     setIsSubmitting(true);
     try {
-      await createQuestion({});
+      await createQuestion({
+        title: values.title,
+        explanation: values.explanation,
+        tags: values.tags,
+        author: JSON.parse(mongoUserId),
+      });
     } catch (err) {
     } finally {
       setIsSubmitting(false);
