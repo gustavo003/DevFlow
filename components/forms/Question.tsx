@@ -36,7 +36,6 @@ export default function Question({ mongoUserId }: { mongoUserId: string }) {
       field.value.filter((t: string) => t !== tag)
     );
   }
-
   function handleInputKeyDown(
     e: React.KeyboardEvent<HTMLInputElement>,
     field: any
@@ -79,8 +78,12 @@ export default function Question({ mongoUserId }: { mongoUserId: string }) {
         explanation: values.explanation,
         tags: values.tags,
         author: JSON.parse(mongoUserId),
+        path: pathname,
       });
+      router.push("/");
     } catch (err) {
+      console.log(err);
+      throw err;
     } finally {
       setIsSubmitting(false);
     }

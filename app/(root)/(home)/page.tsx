@@ -4,10 +4,12 @@ import SearchQuestion from "@/components/shared/search/SearchQuestion";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filter";
 import Link from "next/link";
-import { questions } from "@/constants";
 import QuestionCard from "@/components/cards/QuestionCard";
 import NoResult from "@/components/shared/NoResult";
-const page = () => {
+import { getQuestions } from "@/lib/actions/question.action";
+const page = async () => {
+  const result = await getQuestions({});
+  console.log(result);
   return (
     <>
       <div className=" flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -36,8 +38,8 @@ const page = () => {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result && result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
