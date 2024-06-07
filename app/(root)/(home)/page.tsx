@@ -7,9 +7,14 @@ import Link from "next/link";
 import QuestionCard from "@/components/cards/QuestionCard";
 import NoResult from "@/components/shared/NoResult";
 import { getQuestions } from "@/lib/actions/question.action";
+import { findUser } from "@/lib/actions/user.action";
 const page = async () => {
+  const userId = "1234567890";
+
+  const mongoUser = await findUser({ userId });
+
   const result = await getQuestions({});
-  console.log(result);
+  console.log(mongoUser);
   return (
     <>
       <div className=" flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
