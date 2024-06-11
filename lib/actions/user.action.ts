@@ -47,7 +47,7 @@ export async function deleteUser(params: any) {
     connectToDatabase();
     const { clerkId } = params;
     const user = await User.findOneAndDelete({ clerkId });
-    const questionsIds = Question.find({ author: user?._id }).distinct("_id");
+    // const questionsIds = Question.find({ author: user?._id }).distinct("_id");
     await Question.deleteMany({ author: user?._id });
     return user;
   } catch (err) {
